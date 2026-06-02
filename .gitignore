@@ -1,0 +1,16 @@
+# Dependencies & build
+node_modules
+dist
+*.local
+
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log
+npm-debug.log*
