@@ -1,52 +1,89 @@
-.grid {
+.section {
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border);
+}
+
+.list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 960px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2rem;
+  align-items: start;
   padding: 1.5rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: border-color 0.2s, transform 0.2s;
+  border: 1px solid var(--border);
+  background: var(--bg);
 }
 
-.card:hover {
-  border-color: var(--accent-dim);
-  transform: translateY(-2px);
+.cardReverse {
+  direction: rtl;
 }
 
-.cardTitle {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem;
-  letter-spacing: -0.02em;
+.cardReverse > * {
+  direction: ltr;
 }
 
-.cardDesc {
-  flex: 1;
-  margin: 0 0 1.25rem;
-  font-size: 0.95rem;
+@media (max-width: 800px) {
+  .card,
+  .cardReverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}
+
+.mediaCol {
+  min-width: 0;
+}
+
+.body {
+  min-width: 0;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 500;
+  margin: 0 0 0.35rem;
+  line-height: 1.2;
+}
+
+.org {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+}
+
+.desc {
+  margin: 0 0 1rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.7;
+}
+
+.highlight {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elevated);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .tags {
@@ -60,17 +97,17 @@
 
 .links {
   display: flex;
-  gap: 1rem;
-  margin-top: auto;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 .link {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--accent);
   transition: color 0.2s;
 }
 
 .link:hover {
-  color: var(--text);
+  color: var(--focus);
 }

@@ -1,21 +1,22 @@
 :root {
-  --bg: #070b0f;
-  --bg-elevated: #0d1218;
-  --bg-hover: #141c24;
-  --border: #1e2a36;
-  --text: #f0f4f8;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
-  --accent: #22d3ee;
-  --accent-dim: #0891b2;
-  --accent-glow: rgb(34 211 238 / 0.15);
-  --focus: #67e8f9;
-  --radius: 12px;
+  --bg: #0a0d12;
+  --bg-elevated: #11161e;
+  --bg-hover: #181f2a;
+  --border: #252f3d;
+  --text: #f2efe8;
+  --text-muted: #a8b0bd;
+  --text-subtle: #6b7585;
+  --accent: #c9a962;
+  --accent-dim: #9a7d3c;
+  --accent-glow: rgb(201 169 98 / 0.12);
+  --focus: #e8d5a3;
+  --radius: 14px;
   --radius-sm: 8px;
-  --font-sans: "Instrument Sans", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --max-width: 1080px;
-  --header-h: 4rem;
+  --max-width: 1120px;
+  --header-h: 4.25rem;
 }
 
 *,
@@ -33,12 +34,12 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text);
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, var(--accent-glow), transparent),
-    linear-gradient(180deg, var(--bg) 0%, #05080c 100%);
+    radial-gradient(ellipse 90% 60% at 80% -10%, var(--accent-glow), transparent),
+    radial-gradient(ellipse 60% 40% at 0% 50%, rgb(30 45 70 / 0.15), transparent);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -50,6 +51,7 @@ body {
 
 main {
   flex: 1;
+  padding-top: var(--header-h);
 }
 
 a {
@@ -57,7 +59,8 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+video {
   max-width: 100%;
   display: block;
 }
@@ -78,22 +81,23 @@ img {
 }
 
 .section {
-  padding-block: 5rem;
+  padding-block: clamp(4rem, 10vw, 6rem);
 }
 
 .section-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 0.75rem;
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.02em;
   margin: 0 0 2.5rem;
   line-height: 1.2;
@@ -104,7 +108,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.65rem 1.25rem;
+  padding: 0.7rem 1.35rem;
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
@@ -135,11 +139,11 @@ img {
 
 .tag {
   display: inline-block;
-  padding: 0.25rem 0.6rem;
+  padding: 0.3rem 0.65rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
-  background: var(--bg-elevated);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 999px;
 }

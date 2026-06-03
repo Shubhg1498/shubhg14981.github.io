@@ -1,29 +1,50 @@
-.section {
-  background: var(--bg-elevated);
-  border-block: 1px solid var(--border);
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
 }
 
-.list {
+.card {
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  height: 100%;
+}
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--accent);
+}
+
+.items {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.item {
-  display: block;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
+.items li {
+  font-size: 0.9rem;
   color: var(--text-muted);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: color 0.2s, border-color 0.2s;
+  padding-left: 0.85rem;
+  position: relative;
 }
 
-.item:hover {
-  color: var(--text);
-  border-color: var(--accent-dim);
+.items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-dim);
 }

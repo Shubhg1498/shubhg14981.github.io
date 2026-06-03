@@ -1,18 +1,16 @@
 import { experience } from "../data/content";
+import { SectionIntro } from "./SectionIntro";
 import styles from "./Experience.module.css";
 
 export function Experience() {
   return (
-    <section id="experience" className={`section ${styles.section}`}>
+    <section id="experience" className="section">
       <div className="container">
-        <p className="section-label">Experience</p>
-        <h2 className="section-title">Where I've worked</h2>
+        <SectionIntro label="Experience" title="Where I've contributed." />
         <ol className={styles.list}>
           {experience.map((item) => (
-            <li key={item.period} className={styles.item}>
-              <time className={styles.period} dateTime={item.period}>
-                {item.period}
-              </time>
+            <li key={`${item.period}-${item.org}`} className={styles.item}>
+              <time className={styles.period}>{item.period}</time>
               <div>
                 <h3 className={styles.title}>
                   {item.title}

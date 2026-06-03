@@ -1,0 +1,42 @@
+.section {
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  height: 100%;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.detail {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+}

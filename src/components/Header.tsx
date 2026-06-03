@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { cvUrl } from "../utils/assets";
 import { navLinks, site } from "../data/content";
 import styles from "./Header.module.css";
 
@@ -26,8 +27,7 @@ export function Header() {
     >
       <div className={`container ${styles.inner}`}>
         <a href="#" className={styles.logo} onClick={() => setMenuOpen(false)}>
-          {site.name.split(" ")[0]}
-          <span className={styles.logoDot} aria-hidden />
+          {site.shortName.split(" ")[0]}
         </a>
 
         <nav
@@ -49,8 +49,12 @@ export function Header() {
           </ul>
         </nav>
 
-        <a href="#contact" className={`btn btn-primary ${styles.cta}`}>
-          Get in touch
+        <a
+          href={cvUrl()}
+          className={`btn btn-primary ${styles.cta}`}
+          download
+        >
+          CV
         </a>
 
         <button

@@ -1,9 +1,12 @@
 export const site = {
   name: "Shubham Shursen Ghogare",
   shortName: "Shubham Ghogare",
-  role: "Mechatronics Engineer · Robotics & Autonomous Systems",
+  headline: "Robotics & Autonomous Systems Engineer.",
+  headlineAccent: "From simulation to real robots.",
+  role: "Mechatronics Engineer",
+  locationLine: "Kaiserslautern, DE",
   tagline:
-    "MSc Commercial Vehicle Technology at RPTU. I work on robot learning, ADAS, and safe motion planning—from simulation to real hardware.",
+    "M.Sc. Commercial Vehicle Technology at RPTU with hands-on work in robot learning, ADAS, and safety-critical control. Intern at NEURA Robotics training platforms for diverse manipulation tasks.",
   email: "shubham.ghogare14@gmail.com",
   location: "Kaiserslautern, Germany",
   focus: "Robotics · ADAS · Control & ML",
@@ -12,49 +15,117 @@ export const site = {
   social: {
     github: "https://github.com/Shubhg1498",
     linkedin: "https://www.linkedin.com/in/shubham-ghogare-b30537136/",
-    /** Update with your photography Instagram URL when ready */
     instagram: "https://www.instagram.com/",
   },
 } as const;
 
+export const heroCredentials = [
+  "M.Sc. Commercial Vehicle Technology",
+  "ROS 2 · PyTorch · Python",
+  "NEURA Robotics",
+  "ADAS & Autonomous Systems",
+  "Open to roles in DE/EU",
+] as const;
+
 export const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
+  { href: "#achievements", label: "Achievements" },
+  { href: "#skills", label: "Strengths" },
   { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
-  { href: "#photography", label: "Photography" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
 export const about = {
+  title: "Engineer. Builder. Team player.",
   paragraphs: [
-    "I'm a mechatronics engineer with a Master's in Commercial Vehicle Technology and a foundation in mechanical engineering from VIT. I bridge vehicle dynamics, control theory, and modern ML for autonomous systems.",
-    "At NEURA Robotics I train humanoid and collaborative robots on diverse manipulation tasks. My thesis implements and evaluates Neural Control Barrier Functions in ROS 2 simulation for certifiably safe navigation.",
-    "Outside the lab I'm a photographer and amateur botanist—always curious about how complex systems (natural or engineered) behave.",
+    "I'm a mechatronics engineer with a Master's in Commercial Vehicle Technology and a B.Tech in Mechanical Engineering from VIT. I connect vehicle dynamics, modern control, and machine learning for autonomous and robotic systems.",
+    "At NEURA Robotics I train humanoid and collaborative robots on diverse real-world tasks—bridging data collection, policy learning, and deployment. My thesis implements and evaluates Neural Control Barrier Functions in ROS 2 for certifiably safe motion in simulation.",
+    "Previously at ZF Group I built automated MATLAB validation for gear simulation; at MOBOTIX I work on embedded vision. I also photograph and study plants outside the lab—same curiosity, different domain.",
   ],
-  focus: site.focus,
 } as const;
 
-export const skills = [
-  "ROS 2",
-  "Python",
-  "PyTorch",
-  "MATLAB / Simulink",
-  "Control Barrier Functions",
-  "Reinforcement Learning",
-  "Isaac Sim",
-  "Computer Vision",
-  "Vehicle Dynamics",
-  "ADAS / Autonomous Driving",
-  "C++",
-  "Linux",
+/** Placeholder highlights — replace values in content.ts when you have final numbers. */
+export const achievements = [
+  {
+    value: "6+",
+    label: "Years in robotics & automotive",
+    detail: "ARAI · KI Racing · ZF · NEURA",
+  },
+  {
+    value: "8.69",
+    label: "B.Tech CGPA",
+    detail: "VIT · Mechanical Engineering",
+  },
+  {
+    value: "M.Sc.",
+    label: "Commercial Vehicle Technology",
+    detail: "RPTU Kaiserslautern-Landau",
+  },
+  {
+    value: "2×",
+    label: "SAE BAJA USA",
+    detail: "KI Racing · Vehicle dynamics lead",
+  },
 ] as const;
+
+export const skillGroups = [
+  {
+    title: "Robotics & Autonomy",
+    items: [
+      "ROS 2",
+      "Isaac Sim",
+      "Manipulation & teleop",
+      "Reinforcement learning",
+      "Humanoid / cobot platforms",
+    ],
+  },
+  {
+    title: "Control & Safety",
+    items: [
+      "Control Barrier Functions",
+      "Neural CBF (thesis)",
+      "MATLAB / Simulink",
+      "Vehicle dynamics",
+      "Trajectory planning",
+    ],
+  },
+  {
+    title: "Programming & ML",
+    items: [
+      "Python",
+      "PyTorch",
+      "C++",
+      "Computer vision",
+      "Linux",
+    ],
+  },
+  {
+    title: "Automotive & ADAS",
+    items: [
+      "ADAS concepts",
+      "Commercial vehicle systems",
+      "Software validation",
+      "HEV energy management",
+      "Simulation workflows",
+    ],
+  },
+] as const;
+
+export type ProjectMedia =
+  | { type: "image"; src: string; alt?: string }
+  | { type: "video"; src: string; poster?: string }
+  | { type: "youtube"; id: string };
 
 export type Project = {
   title: string;
+  subtitle: string;
+  org: string;
   description: string;
   tags: string[];
+  highlight?: string;
+  media?: ProjectMedia;
   href?: string;
   repo?: string;
 };
@@ -62,36 +133,46 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Vision Dual-Arm Teleoperation",
+    subtitle: "Active development · 2025–2026",
+    org: "Personal research · ROS 2 stack",
     description:
-      "Dual-arm teleoperation stack integrating vision and control for dexterous robot manipulation—active development.",
-    tags: ["ROS 2", "Python", "Robotics"],
+      "Dual-arm teleoperation integrating vision and control for dexterous manipulation—data collection, policy interfaces, and hardware-in-the-loop experiments.",
+    tags: ["ROS 2", "Python", "Computer Vision", "Manipulation"],
     repo: "https://github.com/Shubhg1498/vision-dual-arm-teleop",
   },
   {
-    title: "Hierarchical RL for Robotic Arm",
+    title: "Neural Control Barrier Functions",
+    subtitle: "Master thesis · 2024–2025",
+    org: "RPTU Kaiserslautern-Landau",
     description:
-      "Hierarchical reinforcement learning framework for multi-stage robotic arm tasks with structured skill decomposition.",
-    tags: ["Python", "RL", "Manipulation"],
-    repo: "https://github.com/Shubhg1498/hierarchical-rl-robotic-arm",
-  },
-  {
-    title: "Neural CBF Training (Master Thesis)",
-    description:
-      "Implementation and evaluation of Neural Control Barrier Functions in a ROS 2-based simulation environment for safe autonomous motion.",
-    tags: ["ROS 2", "PyTorch", "Safety"],
+      "Implementation and evaluation of Neural CBFs in a ROS 2 simulation environment—safe navigation with learned barrier certificates and systematic benchmarking.",
+    tags: ["ROS 2", "PyTorch", "Safety", "Autonomous Systems"],
     repo: "https://github.com/Shubhg1498/Masters-Thesis-NCBF-Training",
   },
   {
-    title: "CBF Obstacle Avoidance",
+    title: "Hierarchical RL for Robotic Arm",
+    subtitle: "M.Sc. project · 2025",
+    org: "Reinforcement learning · manipulation",
     description:
-      "2D car-like robot simulation combining PD control with Control Barrier Functions for static and dynamic obstacle avoidance.",
-    tags: ["Python", "CBF", "Planning"],
+      "Hierarchical RL framework decomposing long-horizon arm tasks into reusable skills with structured training and evaluation in simulation.",
+    tags: ["Python", "RL", "Robotics"],
+    repo: "https://github.com/Shubhg1498/hierarchical-rl-robotic-arm",
+  },
+  {
+    title: "CBF Obstacle Avoidance",
+    subtitle: "Simulation · 2024",
+    org: "2D car-like robot",
+    description:
+      "PD control with Control Barrier Functions for static and dynamic obstacles—trajectory tracking with formal safety constraints in Python simulation.",
+    tags: ["Python", "CBF", "Motion Planning"],
     repo: "https://github.com/Shubhg1498/CBF-for-obstacle-avoidance",
   },
   {
     title: "Parallel Mild-Hybrid EMS",
+    subtitle: "B.Tech capstone · 2020",
+    org: "Energy management · HEV",
     description:
-      "Energy management strategy for a parallel mild-hybrid electric vehicle—rule-based and optimization-driven control.",
+      "Rule-based and optimization-driven energy management for a parallel mild-hybrid electric vehicle in MATLAB/Simulink.",
     tags: ["MATLAB", "HEV", "Control"],
     repo: "https://github.com/Shubhg1498/Energy-Management-System-for-Parallel-Mild-Hybrid-Electric-Vehicle",
   },
@@ -103,14 +184,14 @@ export const experience = [
     title: "Robotics Intern",
     org: "NEURA Robotics",
     detail:
-      "Training robots on diverse manipulation and task policies; bridging simulation, data collection, and deployment on NEURA platforms.",
+      "Training robots on diverse manipulation tasks; simulation, data collection, and deployment on NEURA platforms.",
   },
   {
     period: "Nov 2024 — Present",
     title: "Master Thesis Student",
     org: "RPTU Kaiserslautern-Landau",
     detail:
-      "Neural Control Barrier Functions in ROS 2 simulation—implementation, evaluation, and safe motion planning for autonomous systems.",
+      "Neural Control Barrier Functions in ROS 2—implementation, evaluation, and safe motion planning.",
   },
   {
     period: "Feb 2024 — Present",
@@ -124,38 +205,59 @@ export const experience = [
     title: "Research Intern",
     org: "ZF Group",
     detail:
-      "Literature review on software validation; designed and implemented an automated MATLAB-based validation tool for gear simulation workflows.",
+      "Automated MATLAB validation tooling for gear simulation and software verification workflows.",
   },
   {
     period: "Jun 2019 — Jun 2020",
     title: "Student Trainee",
     org: "ARAI, Pune",
     detail:
-      "Automotive R&D exposure—testing, calibration, and vehicle development processes in India's leading automotive research institute.",
+      "Automotive testing, calibration, and vehicle development at India's leading automotive R&D institute.",
   },
   {
     period: "2017 — 2019",
-    title: "Vehicle Dynamics Engineer · Vice Captain",
+    title: "Vehicle Dynamics · Vice Captain",
     org: "KI Racing (VIT)",
     detail:
-      "Formula Student team—vehicle dynamics, design, and competition operations for SAE BAJA events in the US.",
+      "Formula Student team—SAE BAJA Oregon & Rochester; vehicle dynamics and competition operations.",
   },
 ] as const;
 
-export const education = [
+export type EducationEntry = {
+  period: string;
+  degree: string;
+  school: string;
+  location: string;
+  detail: string;
+  stats: { label: string; value: string }[];
+};
+
+export const education: EducationEntry[] = [
   {
     period: "2021 — 2025",
     degree: "M.Sc. Commercial Vehicle Technology",
     school: "RPTU Kaiserslautern-Landau",
-    detail: "Focus on autonomous driving, ADAS, and commercial vehicle systems.",
+    location: "Germany",
+    detail: "Autonomous driving, ADAS, and commercial vehicle systems.",
+    stats: [
+      { label: "Focus", value: "ADAS · Autonomy" },
+      { label: "Thesis", value: "Neural CBF / ROS 2" },
+      { label: "Status", value: "Completed" },
+    ],
   },
   {
     period: "2016 — 2020",
-    degree: "B.Tech Mechanical Engineering (8.69 CGPA)",
+    degree: "B.Tech Mechanical Engineering",
     school: "Vellore Institute of Technology",
-    detail: "Mechatronics-oriented track with robotics, vehicle dynamics, and design projects.",
+    location: "India",
+    detail: "Robotics, vehicle dynamics, and design-intensive coursework.",
+    stats: [
+      { label: "CGPA", value: "8.69" },
+      { label: "Team", value: "KI Racing" },
+      { label: "Activities", value: "SAE BAJA USA" },
+    ],
   },
-] as const;
+];
 
 export const certifications = [
   "Aerial Robotics (Coursera)",
@@ -163,8 +265,7 @@ export const certifications = [
   "SAE BAJA Oregon & Rochester (SAE International)",
 ] as const;
 
-export const photography = {
-  title: "Photography",
-  lead: "Street, travel, and nature—another way I study light and composition.",
-  cta: "View on Instagram",
+export const contactCta = {
+  title: "Ready to build safer, smarter autonomous systems?",
+  lead: "Open to robotics, ADAS, and autonomy roles across Germany and the EU.",
 } as const;
