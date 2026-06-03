@@ -21,6 +21,13 @@
   background: var(--bg);
 }
 
+.media[data-fit="contain"] {
+  object-fit: contain;
+  aspect-ratio: auto;
+  max-height: 420px;
+  background: #fff;
+}
+
 .placeholder {
   aspect-ratio: 16 / 9;
   display: flex;

@@ -114,7 +114,7 @@ export const skillGroups = [
 ] as const;
 
 export type ProjectMedia =
-  | { type: "image"; src: string; alt?: string }
+  | { type: "image"; src: string; alt?: string; fit?: "cover" | "contain" }
   | { type: "video"; src: string; poster?: string }
   | { type: "youtube"; id: string };
 
@@ -128,6 +128,8 @@ export type Project = {
   media?: ProjectMedia;
   href?: string;
   repo?: string;
+  /** e.g. Google Drive link to thesis PDF */
+  reportUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -143,10 +145,18 @@ export const projects: Project[] = [
   {
     title: "Neural Control Barrier Functions",
     subtitle: "Master thesis · 2024–2025",
-    org: "RPTU Kaiserslautern-Landau",
+    org: "RPTU Kaiserslautern-Landau · Institute of Electromobility",
     description:
-      "Implementation and evaluation of Neural CBFs in a ROS 2 simulation environment—safe navigation with learned barrier certificates and systematic benchmarking.",
-    tags: ["ROS 2", "PyTorch", "Safety", "Autonomous Systems"],
+      "Implementation and evaluation of neural control barrier functions in ROS 2–based simulation: Gazebo environment setup, data collection, Python preprocessing, PyTorch training with Weights & Biases validation, and verification of the learned nCBF as a safety filter.",
+    tags: ["ROS 2", "Gazebo", "PyTorch", "Python", "W&B", "Safety"],
+    media: {
+      type: "image",
+      src: "projects/thesis-ncbf-flowchart.png",
+      alt: "Thesis workflow from Gazebo/ROS simulation through PyTorch training to nCBF safety filter verification",
+      fit: "contain",
+    },
+    reportUrl:
+      "https://drive.google.com/file/d/14jPYReLPAdvtDuCVOaZfYJSJKQ5S26Pi",
     repo: "https://github.com/Shubhg1498/Masters-Thesis-NCBF-Training",
   },
   {

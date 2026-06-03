@@ -40,6 +40,7 @@ export function ProjectMedia({ media, title }: Props) {
   return (
     <img
       className={styles.media}
+      data-fit={media.fit ?? "cover"}
       src={assetUrl(media.src)}
       alt={media.alt ?? title}
       loading="lazy"

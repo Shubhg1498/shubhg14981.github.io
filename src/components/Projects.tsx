@@ -37,6 +37,16 @@ export function Projects() {
                     ))}
                   </ul>
                   <div className={styles.links}>
+                    {project.reportUrl ? (
+                      <a
+                        href={project.reportUrl}
+                        className={styles.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Thesis report →
+                      </a>
+                    ) : null}
                     {project.href ? (
                       <a href={project.href} className={styles.link}>
                         View project →
