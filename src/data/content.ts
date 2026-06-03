@@ -40,7 +40,7 @@ export const about = {
   paragraphs: [
     "I'm a mechatronics engineer with a Master's in Commercial Vehicle Technology and a B.Tech in Mechanical Engineering from VIT. I connect vehicle dynamics, modern control, and machine learning for autonomous and robotic systems.",
     "At NEURA Robotics I train humanoid and collaborative robots on diverse real-world tasks—bridging data collection, policy learning, and deployment. I recently completed my Master's thesis on Neural Control Barrier Functions in ROS 2, evaluating learned safety filters in simulation.",
-    "Previously at ZF Group I built automated MATLAB validation for gear simulation workflows. I also photograph and study plants outside the lab—same curiosity, different domain.",
+    "Previously at MOBOTIX I worked on embedded vision and industrial cameras; at ZF Group I built automated MATLAB validation for gear simulation workflows. I also photograph and study plants outside the lab—same curiosity, different domain.",
   ],
 } as const;
 
@@ -109,7 +109,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Vision Dual-Arm Teleoperation",
-    subtitle: "Active development · 2025–2026",
+    subtitle: "Active development · 2025 — 2026",
     org: "Personal research · ROS 2 stack",
     description:
       "Dual-arm teleoperation integrating vision and control for dexterous manipulation—data collection, policy interfaces, and hardware-in-the-loop experiments.",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
   },
   {
     title: "Neural Control Barrier Functions",
-    subtitle: "Master thesis · Completed 2025",
+    subtitle: "Master thesis · Nov 2024 — 2025",
     org: "RPTU Kaiserslautern-Landau · Institute of Electromobility",
     description:
       "Implementation and evaluation of neural control barrier functions in ROS 2–based simulation: Gazebo environment setup, data collection, Python preprocessing, PyTorch training with Weights & Biases validation, and verification of the learned nCBF as a safety filter.",
@@ -172,7 +172,7 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    period: "2025 — Present",
+    period: "Apr 2026 — Present",
     title: "Robotics Intern",
     org: "NEURA Robotics",
     logo: "logos/neura.png",
@@ -180,7 +180,15 @@ export const experience: ExperienceEntry[] = [
       "Training robots on diverse manipulation tasks; simulation, data collection, and deployment on NEURA platforms.",
   },
   {
-    period: "Jul — Dec 2023",
+    period: "Feb 2024 — Sep 2025",
+    title: "Working Student",
+    org: "MOBOTIX AG",
+    logo: "logos/mobotix.png",
+    detail:
+      "Embedded vision and industrial camera systems in a production-oriented environment.",
+  },
+  {
+    period: "Jul 2023 — Dec 2023",
     title: "Research Intern",
     org: "ZF Group",
     logo: "logos/zf.png",
