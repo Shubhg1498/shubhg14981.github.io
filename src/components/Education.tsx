@@ -1,4 +1,5 @@
 import { certifications, education } from "../data/content";
+import { assetUrl } from "../utils/assets";
 import { SectionIntro } from "./SectionIntro";
 import styles from "./Education.module.css";
 
@@ -12,6 +13,16 @@ export function Education() {
             <li key={item.school}>
               <article className={styles.card}>
                 <div className={styles.header}>
+                  {item.logo ? (
+                    <img
+                      className={styles.logo}
+                      src={assetUrl(item.logo)}
+                      alt=""
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                    />
+                  ) : null}
                   <div>
                     <h3 className={styles.degree}>{item.degree}</h3>
                     <p className={styles.school}>
@@ -36,9 +47,20 @@ export function Education() {
         <div className={styles.certs}>
           <h3 className={styles.certsTitle}>Certifications</h3>
           <ul className={styles.certsList}>
-            {certifications.map((c) => (
-              <li key={c}>
-                <span className="tag">{c}</span>
+            {certifications.map((cert) => (
+              <li key={cert.name + cert.year}>
+                <a
+                  href={cert.url}
+                  className={styles.certLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className={styles.certName}>{cert.name}</span>
+                  <span className={styles.certMeta}>
+                    {cert.issuer}
+                    {cert.year ? ` · ${cert.year}` : ""}
+                  </span>
+                </a>
               </li>
             ))}
           </ul>

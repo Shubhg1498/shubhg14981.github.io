@@ -6,12 +6,11 @@ export const site = {
   role: "Mechatronics Engineer",
   locationLine: "Kaiserslautern, DE",
   tagline:
-    "M.Sc. Commercial Vehicle Technology at RPTU with hands-on work in robot learning, ADAS, and safety-critical control. Intern at NEURA Robotics training platforms for diverse manipulation tasks.",
+    "M.Sc. Commercial Vehicle Technology at RPTU. Robot learning, ADAS, and safety-critical control—from completed thesis work on neural CBFs to hands-on training at NEURA Robotics.",
   email: "shubham.ghogare14@gmail.com",
   location: "Kaiserslautern, Germany",
   focus: "Robotics · ADAS · Control & ML",
-  currently:
-    "Intern at NEURA Robotics · Master thesis on Neural Control Barrier Functions",
+  currently: "Robotics Intern at NEURA Robotics",
   social: {
     github: "https://github.com/Shubhg1498",
     linkedin: "https://www.linkedin.com/in/shubham-ghogare-b30537136/",
@@ -21,15 +20,14 @@ export const site = {
 
 export const heroCredentials = [
   "M.Sc. Commercial Vehicle Technology",
+  "Thesis completed · Neural CBF",
   "ROS 2 · PyTorch · Python",
   "NEURA Robotics",
-  "ADAS & Autonomous Systems",
   "Open to roles in DE/EU",
 ] as const;
 
 export const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#achievements", label: "Achievements" },
   { href: "#skills", label: "Strengths" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
@@ -41,34 +39,10 @@ export const about = {
   title: "Engineer. Builder. Team player.",
   paragraphs: [
     "I'm a mechatronics engineer with a Master's in Commercial Vehicle Technology and a B.Tech in Mechanical Engineering from VIT. I connect vehicle dynamics, modern control, and machine learning for autonomous and robotic systems.",
-    "At NEURA Robotics I train humanoid and collaborative robots on diverse real-world tasks—bridging data collection, policy learning, and deployment. My thesis implements and evaluates Neural Control Barrier Functions in ROS 2 for certifiably safe motion in simulation.",
-    "Previously at ZF Group I built automated MATLAB validation for gear simulation; at MOBOTIX I work on embedded vision. I also photograph and study plants outside the lab—same curiosity, different domain.",
+    "At NEURA Robotics I train humanoid and collaborative robots on diverse real-world tasks—bridging data collection, policy learning, and deployment. I recently completed my Master's thesis on Neural Control Barrier Functions in ROS 2, evaluating learned safety filters in simulation.",
+    "Previously at ZF Group I built automated MATLAB validation for gear simulation workflows. I also photograph and study plants outside the lab—same curiosity, different domain.",
   ],
 } as const;
-
-/** Placeholder highlights — replace values in content.ts when you have final numbers. */
-export const achievements = [
-  {
-    value: "6+",
-    label: "Years in robotics & automotive",
-    detail: "ARAI · KI Racing · ZF · NEURA",
-  },
-  {
-    value: "8.69",
-    label: "B.Tech CGPA",
-    detail: "VIT · Mechanical Engineering",
-  },
-  {
-    value: "M.Sc.",
-    label: "Commercial Vehicle Technology",
-    detail: "RPTU Kaiserslautern-Landau",
-  },
-  {
-    value: "2×",
-    label: "SAE BAJA USA",
-    detail: "KI Racing · Vehicle dynamics lead",
-  },
-] as const;
 
 export const skillGroups = [
   {
@@ -144,7 +118,7 @@ export const projects: Project[] = [
   },
   {
     title: "Neural Control Barrier Functions",
-    subtitle: "Master thesis · 2024–2025",
+    subtitle: "Master thesis · Completed 2025",
     org: "RPTU Kaiserslautern-Landau · Institute of Electromobility",
     description:
       "Implementation and evaluation of neural control barrier functions in ROS 2–based simulation: Gazebo environment setup, data collection, Python preprocessing, PyTorch training with Weights & Biases validation, and verification of the learned nCBF as a safety filter.",
@@ -188,32 +162,28 @@ export const projects: Project[] = [
   },
 ];
 
-export const experience = [
+export type ExperienceEntry = {
+  period: string;
+  title: string;
+  org: string;
+  detail: string;
+  logo?: string;
+};
+
+export const experience: ExperienceEntry[] = [
   {
     period: "2025 — Present",
     title: "Robotics Intern",
     org: "NEURA Robotics",
+    logo: "logos/neura.png",
     detail:
       "Training robots on diverse manipulation tasks; simulation, data collection, and deployment on NEURA platforms.",
-  },
-  {
-    period: "Nov 2024 — Present",
-    title: "Master Thesis Student",
-    org: "RPTU Kaiserslautern-Landau",
-    detail:
-      "Neural Control Barrier Functions in ROS 2—implementation, evaluation, and safe motion planning.",
-  },
-  {
-    period: "Feb 2024 — Present",
-    title: "Working Student",
-    org: "MOBOTIX AG",
-    detail:
-      "Embedded vision and industrial camera systems in a production-oriented environment.",
   },
   {
     period: "Jul — Dec 2023",
     title: "Research Intern",
     org: "ZF Group",
+    logo: "logos/zf.png",
     detail:
       "Automated MATLAB validation tooling for gear simulation and software verification workflows.",
   },
@@ -221,6 +191,7 @@ export const experience = [
     period: "Jun 2019 — Jun 2020",
     title: "Student Trainee",
     org: "ARAI, Pune",
+    logo: "logos/arai.png",
     detail:
       "Automotive testing, calibration, and vehicle development at India's leading automotive R&D institute.",
   },
@@ -228,10 +199,11 @@ export const experience = [
     period: "2017 — 2019",
     title: "Vehicle Dynamics · Vice Captain",
     org: "KI Racing (VIT)",
+    logo: "logos/vit.png",
     detail:
       "Formula Student team—SAE BAJA Oregon & Rochester; vehicle dynamics and competition operations.",
   },
-] as const;
+];
 
 export type EducationEntry = {
   period: string;
@@ -239,7 +211,15 @@ export type EducationEntry = {
   school: string;
   location: string;
   detail: string;
+  logo?: string;
   stats: { label: string; value: string }[];
+};
+
+export type Certification = {
+  name: string;
+  issuer: string;
+  year?: string;
+  url: string;
 };
 
 export const education: EducationEntry[] = [
@@ -248,6 +228,7 @@ export const education: EducationEntry[] = [
     degree: "M.Sc. Commercial Vehicle Technology",
     school: "RPTU Kaiserslautern-Landau",
     location: "Germany",
+    logo: "logos/rptu.png",
     detail: "Autonomous driving, ADAS, and commercial vehicle systems.",
     stats: [
       { label: "Focus", value: "ADAS · Autonomy" },
@@ -260,6 +241,7 @@ export const education: EducationEntry[] = [
     degree: "B.Tech Mechanical Engineering",
     school: "Vellore Institute of Technology",
     location: "India",
+    logo: "logos/vit.png",
     detail: "Robotics, vehicle dynamics, and design-intensive coursework.",
     stats: [
       { label: "CGPA", value: "8.69" },
@@ -269,11 +251,56 @@ export const education: EducationEntry[] = [
   },
 ];
 
-export const certifications = [
-  "Aerial Robotics (Coursera)",
-  "Electric Cars: Technology, Business & Introduction (edX)",
-  "SAE BAJA Oregon & Rochester (SAE International)",
-] as const;
+export const certifications: Certification[] = [
+  {
+    name: "Aerial Robotics",
+    issuer: "Coursera · University of Pennsylvania",
+    year: "2020",
+    url: "https://coursera.org/share/3ed0176bfee516be15e5ac732240c8ae",
+  },
+  {
+    name: "Electric Cars: Technology",
+    issuer: "edX · Delft University of Technology",
+    year: "2020",
+    url: "https://courses.edx.org/certificates/8f3b238399d841ae9c1af6d9a2fbc283",
+  },
+  {
+    name: "Electric Cars: Business",
+    issuer: "edX · Delft University of Technology",
+    year: "2019",
+    url: "https://courses.edx.org/certificates/8418016aef1945dea755ed4c4230f445",
+  },
+  {
+    name: "Electric Cars: Introduction",
+    issuer: "edX · Delft University of Technology",
+    year: "2019",
+    url: "https://courses.edx.org/certificates/759b5d9ace684463bf219a28101374ed",
+  },
+  {
+    name: "3D Printing Applications",
+    issuer: "Coursera · University of Illinois",
+    year: "2019",
+    url: "https://coursera.org/account/accomplishments/verify/4DVVF9QRZV3J",
+  },
+  {
+    name: "The 3D Printing Revolution",
+    issuer: "Coursera · University of Illinois",
+    year: "2019",
+    url: "https://coursera.org/account/accomplishments/verify/RH4G2S3D435A",
+  },
+  {
+    name: "SAE BAJA Rochester",
+    issuer: "SAE International",
+    year: "2019",
+    url: "https://www.sae.org/",
+  },
+  {
+    name: "SAE BAJA Oregon",
+    issuer: "SAE International",
+    year: "2018",
+    url: "https://www.sae.org/",
+  },
+];
 
 export const contactCta = {
   title: "Ready to build safer, smarter autonomous systems?",

@@ -1,4 +1,5 @@
 import { experience } from "../data/content";
+import { assetUrl } from "../utils/assets";
 import { SectionIntro } from "./SectionIntro";
 import styles from "./Experience.module.css";
 
@@ -10,8 +11,22 @@ export function Experience() {
         <ol className={styles.list}>
           {experience.map((item) => (
             <li key={`${item.period}-${item.org}`} className={styles.item}>
-              <time className={styles.period}>{item.period}</time>
-              <div>
+              {item.logo ? (
+                <img
+                  className={styles.logo}
+                  src={assetUrl(item.logo)}
+                  alt=""
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                />
+              ) : (
+                <span className={styles.logoFallback} aria-hidden>
+                  {item.org.charAt(0)}
+                </span>
+              )}
+              <div className={styles.body}>
+                <time className={styles.period}>{item.period}</time>
                 <h3 className={styles.title}>
                   {item.title}
                   <span className={styles.org}> · {item.org}</span>
