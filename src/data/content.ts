@@ -109,11 +109,15 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Vision Dual-Arm Teleoperation",
-    subtitle: "Active development · 2025 — 2026",
-    org: "Personal research · ROS 2 stack",
+    subtitle: "Demo complete · 2025 — 2026",
+    org: "Personal research · ROS 2 + Gazebo",
     description:
-      "Dual-arm teleoperation integrating vision and control for dexterous manipulation—data collection, policy interfaces, and hardware-in-the-loop experiments.",
-    tags: ["ROS 2", "Python", "Computer Vision", "Manipulation"],
+      "Webcam hand tracking drives a Franka Panda in Gazebo via MoveIt Servo—pinch gestures, physics grasp, transport latch, and four scene cameras. v1 demo recorded; monocular teleop as a first step toward IL data collection.",
+    tags: ["ROS 2", "Gazebo", "MoveIt", "Computer Vision", "Manipulation"],
+    media: {
+      type: "video",
+      src: "projects/vision-teleop-demo.mp4",
+    },
     repo: "https://github.com/Shubhg1498/vision-dual-arm-teleop",
   },
   {
