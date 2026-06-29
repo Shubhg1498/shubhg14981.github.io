@@ -1,15 +1,15 @@
 export const site = {
   name: "Shubham Shursen Ghogare",
   shortName: "Shubham Ghogare",
-  headline: "Robotics & Autonomous Systems Engineer.",
-  headlineAccent: "From simulation to real robots.",
-  role: "Mechatronics Engineer",
-  locationLine: "Kaiserslautern, DE",
+  headline:
+    "Robotics Engineer focused on robot learning, safe autonomy, and real-world manipulation.",
+  role: "Robotics Engineer · Robot Learning · Safe Autonomy",
+  locationLine: "Reutlingen, DE",
   tagline:
-    "M.Sc. Commercial Vehicle Technology at RPTU. Robot learning, ADAS, and safety-critical control—from completed thesis work on neural CBFs to hands-on training at NEURA Robotics.",
+    "I build ROS 2, control, and ML pipelines from simulation to robot deployment — from a Neural CBF thesis to hands-on humanoid robot training at NEURA Robotics.",
   email: "shubham.ghogare14@gmail.com",
-  location: "Kaiserslautern, Germany",
-  focus: "Robotics · ADAS · Control & ML",
+  location: "Reutlingen, Germany",
+  focus: "Robot Learning · Safe Autonomy · Manipulation",
   currently: "Robotics Intern at NEURA Robotics",
   social: {
     github: "https://github.com/Shubhg1498",
@@ -19,15 +19,14 @@ export const site = {
 } as const;
 
 export const heroCredentials = [
-  "M.Sc. Commercial Vehicle Technology",
-  "Thesis completed · Neural CBF",
-  "ROS 2 · PyTorch · Python",
-  "NEURA Robotics",
-  "Open to roles in DE/EU",
+  "NEURA Robotics · Robot Training & Teleoperation",
+  "M.Sc. Thesis Grade 1.0 · Neural Control Barrier Functions",
+  "ROS 2 · PyTorch · Gazebo · Robot Learning",
 ] as const;
 
 export const navLinks = [
   { href: "#about", label: "About" },
+  { href: "#research", label: "Research" },
   { href: "#skills", label: "Strengths" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
@@ -44,44 +43,60 @@ export const about = {
   ],
 } as const;
 
+export const researchInterests = [
+  "Safe robot learning",
+  "Learning-based control",
+  "Robot manipulation",
+  "Teleoperation and imitation learning",
+  "Sim-to-real transfer",
+  "Human-centered robotic systems",
+] as const;
+
 export const skillGroups = [
   {
-    title: "Robotics & Autonomy",
+    title: "Robotics & Robot Learning",
     items: [
       "ROS 2",
-      "Isaac Sim",
-      "Manipulation & teleop",
-      "Reinforcement learning",
-      "Humanoid / cobot platforms",
+      "Gazebo",
+      "MoveIt",
+      "MoveIt Servo",
+      "Teleoperation",
+      "Robot Manipulation",
+      "Imitation Learning",
+      "Reinforcement Learning",
     ],
   },
   {
-    title: "Control & Safety",
+    title: "Control & Planning",
     items: [
       "Control Barrier Functions",
-      "Neural CBF (thesis)",
+      "Neural CBFs",
+      "MPC basics",
+      "Trajectory Planning",
+      "Vehicle Dynamics",
       "MATLAB / Simulink",
-      "Vehicle dynamics",
-      "Trajectory planning",
     ],
   },
   {
-    title: "Programming & ML",
+    title: "ML / Software",
     items: [
       "Python",
       "PyTorch",
-      "C++",
-      "Computer vision",
+      "OpenCV",
+      "MediaPipe",
       "Linux",
+      "Git",
+      "Docker",
+      "Weights & Biases",
     ],
   },
   {
-    title: "Automotive & ADAS",
+    title: "Validation & Systems",
     items: [
-      "ADAS concepts",
-      "Commercial vehicle systems",
       "Software validation",
-      "HEV energy management",
+      "Camera systems",
+      "Test automation",
+      "Jira / Confluence",
       "Simulation workflows",
     ],
   },
@@ -177,11 +192,11 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     period: "Apr 2026 — Present",
-    title: "Robotics Intern",
+    title: "Robotics Intern / Robot Data & Training",
     org: "NEURA Robotics",
     logo: "logos/neura.png",
     detail:
-      "Training robots on diverse manipulation tasks; simulation, data collection, and deployment on NEURA platforms.",
+      "Collected and evaluated teleoperation data for humanoid and collaborative robot manipulation tasks. Worked with real robot training workflows, teleoperation pipelines, policy inference, task failure analysis, and dataset quality improvement. Contributed to use cases involving sorting, loading, and manipulation, including 200+ episode datasets that improved inference success in internal evaluations.",
   },
   {
     period: "Feb 2024 — Sep 2025",
@@ -244,7 +259,7 @@ export const education: EducationEntry[] = [
     detail: "Autonomous driving, ADAS, and commercial vehicle systems.",
     stats: [
       { label: "Focus", value: "ADAS · Autonomy" },
-      { label: "Thesis", value: "Neural CBF / ROS 2" },
+      { label: "Thesis", value: "1.0 · Neural CBF / ROS 2" },
       { label: "Status", value: "Completed" },
     ],
   },
